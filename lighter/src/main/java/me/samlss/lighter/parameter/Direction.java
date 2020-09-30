@@ -11,6 +11,7 @@ public class Direction {
     public static final int RIGHT = 1;
     public static final int TOP = 2;
     public static final int BOTTOM = 3;
+    public static final int CENTER_BOTTOM = 4;
 
     private Direction(){}
 }
