@@ -200,6 +200,14 @@ public class LighterView extends FrameLayout {
                 }
                 layoutParams.topMargin = (int) (highlightedViewRect.bottom + marginOffset.getTopOffset());
                 break;
+
+            case Direction.CENTER_BOTTOM:
+                layoutParams.topMargin = (int) (highlightedViewRect.bottom + marginOffset.getTopOffset());
+                break;
+
+            case Direction.CENTER_TOP:
+                layoutParams.bottomMargin = (int) (height - highlightedViewRect.bottom +  highlightedViewRect.height() + marginOffset.getBottomOffset());
+                break;
         }
 
         if(layoutParams.rightMargin != 0
