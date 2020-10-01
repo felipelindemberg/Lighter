@@ -30,6 +30,8 @@ public class LighterParameter {
     private float shapeYOffset;
     private float shapeRightOffset;
     private float shapeLeftOffset;
+    private float shapeTopOffset;
+    private float shapeBottomOffset;
 
     private int tipViewRelativeDirection;
     private MarginOffset tipViewRelativeMarginOffset;
@@ -197,6 +199,22 @@ public class LighterParameter {
         this.shapeRightOffset = shapeRightOffset;
     }
 
+    public float getShapeTopOffset() {
+        return shapeTopOffset;
+    }
+
+    public void setShapeTopOffset(float shapeTopOffset) {
+        this.shapeTopOffset = shapeTopOffset;
+    }
+
+    public float getShapeBottomOffset() {
+        return shapeBottomOffset;
+    }
+
+    public void setShapeBottomOffset(float shapeBottomOffset) {
+        this.shapeBottomOffset = shapeBottomOffset;
+    }
+
     public int getGravity() {
         return mGravity;
     }
@@ -314,10 +332,22 @@ public class LighterParameter {
             return this;
         }
 
+        public Builder setTopOffset(float topOffset) {
+            mLighterParameter.setShapeTopOffset(topOffset);
+            return this;
+        }
+
+        public Builder setBottomOffset(float bottomOffset) {
+            mLighterParameter.setShapeBottomOffset(bottomOffset);
+            return this;
+        }
+
         public Builder setGravity(int gravity) {
             mLighterParameter.setGravity(gravity);
             return this;
         }
+
+
 
         /**
          * Set the direction of the tip view relative to the highlighted view.

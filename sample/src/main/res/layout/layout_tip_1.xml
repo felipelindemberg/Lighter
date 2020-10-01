@@ -10,7 +10,7 @@
         android:textColor="#C9C425"
         android:id="@+id/tutorial_msg"
         android:gravity="center"
-        android:text="No menu à direita no topo da tela,\nvocê poderá navegar entre as\ncategorias disponíveis."
+        android:text="No menu à direita no topo da tela, você poderá navegar entre as categorias disponíveis."
         android:padding="4dp"
         android:layout_height="wrap_content" />
 
