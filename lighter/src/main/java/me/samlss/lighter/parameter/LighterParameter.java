@@ -2,6 +2,7 @@ package me.samlss.lighter.parameter;
 
 import android.app.Activity;
 import android.graphics.RectF;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -27,9 +28,13 @@ public class LighterParameter {
 
     private float shapeXOffset;
     private float shapeYOffset;
+    private float shapeRightOffset;
+    private float shapeLeftOffset;
 
     private int tipViewRelativeDirection;
     private MarginOffset tipViewRelativeMarginOffset;
+    private int mGravity = Gravity.NO_GRAVITY;
+
     private Animation tipViewDisplayAnimation;
 
     private  LighterParameter(){
@@ -184,6 +189,30 @@ public class LighterParameter {
         return shapeYOffset;
     }
 
+    public float getShapeRightOffset() {
+        return shapeRightOffset;
+    }
+
+    public void setShapeRightOffset(float shapeRightOffset) {
+        this.shapeRightOffset = shapeRightOffset;
+    }
+
+    public int getGravity() {
+        return mGravity;
+    }
+
+    public void setGravity(int gravity) {
+        this.mGravity = gravity;
+    }
+
+    public float getShapeLeftOffset() {
+        return shapeLeftOffset;
+    }
+
+    public void setShapeLeftOffset(float shapeLeftOffset) {
+        this.shapeLeftOffset = shapeLeftOffset;
+    }
+
     /**
      * Help to build {@link LighterParameter}
      * */
@@ -272,6 +301,21 @@ public class LighterParameter {
          * */
         public Builder setShapeYOffset(float yOffset) {
             mLighterParameter.setShapeYOffset(yOffset);
+            return this;
+        }
+
+        public Builder setRightOffset(float rightOffset) {
+            mLighterParameter.setShapeRightOffset(rightOffset);
+            return this;
+        }
+
+        public Builder setLeftOffset(float leftOffset) {
+            mLighterParameter.setShapeLeftOffset(leftOffset);
+            return this;
+        }
+
+        public Builder setGravity(int gravity) {
+            mLighterParameter.setGravity(gravity);
             return this;
         }
 

@@ -90,9 +90,9 @@ public class ViewUtils {
 
         lighterParameter.setHighlightedViewRect(highlightedViewRect);
         lighterParameter.getLighterShape().setViewRect(new RectF(
-                highlightedViewRect.left - lighterParameter.getShapeXOffset(),
+                highlightedViewRect.left - lighterParameter.getShapeXOffset()  + lighterParameter.getShapeLeftOffset(),
                 highlightedViewRect.top - lighterParameter.getShapeYOffset(),
-                highlightedViewRect.right + lighterParameter.getShapeXOffset(),
+                highlightedViewRect.right + lighterParameter.getShapeXOffset() + lighterParameter.getShapeRightOffset(),
                 highlightedViewRect.bottom + lighterParameter.getShapeYOffset()
         ));
     }

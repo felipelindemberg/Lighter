@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -135,15 +136,17 @@ public class LighterFragment extends Fragment {
                         .setHighlightedViewId(R.id.vp_btn_1)
                         .setLighterShape(new OvalShape())
                         .setTipView(mTipViewList.get(0))
+                        .setRightOffset(40)
                         .setTipViewDisplayAnimation(LighterHelper.getScaleAnimation())
-                        .setTipViewRelativeDirection(Direction.RIGHT)
-                        .setTipViewRelativeOffset(new MarginOffset(30, 0, 80, 0))
+                        .setTipViewRelativeDirection(Direction.CENTER_BOTTOM)
+                        .setTipViewRelativeOffset(new MarginOffset(0, 0, 80, 0))
                         .build())
                 .addHighlight(new LighterParameter.Builder()
                         .setHighlightedViewId(R.id.vp_btn_2)
                         .setLighterShape(new OvalShape())
                         .setTipView(mTipViewList.get(1))
-                        .setTipViewRelativeDirection(Direction.LEFT)
+//                        .setTipViewRelativeDirection(Direction.LEFT)
+                        .setGravity(Gravity.CENTER)
                         .setTipViewDisplayAnimation(LighterHelper.getScaleAnimation())
                         .setTipViewRelativeOffset(new MarginOffset(50, 0, 100, 0))
                         .build())
