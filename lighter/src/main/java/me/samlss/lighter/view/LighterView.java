@@ -167,6 +167,11 @@ public class LighterView extends FrameLayout {
             return layoutParams;
         }
 
+        if (lighterParameter.getGravity() != Gravity.NO_GRAVITY) {
+            layoutParams.gravity = lighterParameter.getGravity();
+            return layoutParams;
+        }
+
         boolean alignRight = false;
         boolean canUpdateGravity = true;
         switch (lighterParameter.getTipViewRelativeDirection()) {
@@ -226,10 +231,6 @@ public class LighterView extends FrameLayout {
             } else {
                 layoutParams.gravity |= Gravity.TOP;
             }
-        }
-
-        if (lighterParameter.getGravity() != Gravity.NO_GRAVITY) {
-            layoutParams.gravity = lighterParameter.getGravity();
         }
 
         return layoutParams;
