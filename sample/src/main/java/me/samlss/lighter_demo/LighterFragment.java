@@ -121,7 +121,7 @@ public class LighterFragment extends Fragment {
         showGuide();
     }
 
-    private void showGuide(){
+    private void showGuide() {
         mLighter = Lighter.with((ViewGroup) getView())
                 .setIntercept(true)
                 //The callback interface will not be called if intercept is true.
@@ -132,58 +132,66 @@ public class LighterFragment extends Fragment {
 //                        Toast.makeText(getActivity(), "No show...", Toast.LENGTH_SHORT).show();
                     }
                 })
+//                .addHighlight(new LighterParameter.Builder()
+//                        .setHighlightedViewId(R.id.vp_btn_1)
+//                        .setLighterShape(new OvalShape())
+//                        .setTipView(mTipViewList.get(0))
+//                        .setRightOffset(40)
+//                        .setTopOffset(140)
+//                        .setBottomOffset(20)
+//                        .setTipViewDisplayAnimation(LighterHelper.getScaleAnimation())
+////                        .setTipViewRelativeDirection(Direction.CENTER_BOTTOM)
+//                        .setGravity(Gravity.CENTER)
+//                        .setTipViewRelativeOffset(new MarginOffset(0, 0, 80, 0))
+//                        .build())
+//                .addHighlight(new LighterParameter.Builder()
+//                        .setHighlightedViewId(R.id.vp_btn_2)
+//                        .setLighterShape(new OvalShape())
+//                        .setTipView(mTipViewList.get(1))
+//                        .setTipViewRelativeDirection(Direction.LEFT)
+////                        .setBottomOffset(120)
+////                        .setGravity(Gravity.CENTER)
+//                        .setTipViewDisplayAnimation(LighterHelper.getScaleAnimation())
+//                        .setTipViewRelativeOffset(new MarginOffset(50, 0, 100, 0))
+//                        .build())
+//                .addHighlight(new LighterParameter.Builder()
+//                        .setHighlightedViewId(R.id.vp_btn_3)
+//                        .setLighterShape(new OvalShape())
+//                        .setTipView(mTipViewList.get(2))
+//                        .setTipViewRelativeDirection(Direction.TOP)
+//                        .setTipViewDisplayAnimation(LighterHelper.getScaleAnimation())
+//                        .setTipViewRelativeOffset(new MarginOffset(-400, 0, 0, 30))
+//                        .build())
+//                .addHighlight(new LighterParameter.Builder()
+//                        .setHighlightedViewId(R.id.vp_btn_4)
+//                        .setLighterShape(new OvalShape())
+//                        .setTipView(mTipViewList.get(3))
+//                        .setTipViewRelativeDirection(Direction.TOP)
+//                        .setTipViewRelativeOffset(new MarginOffset(80, 0, 0, 20))
+//                        .setTipViewDisplayAnimation(LighterHelper.getScaleAnimation())
+//                        .build())
+//                .addHighlight(new LighterParameter.Builder()
+//                        .setHighlightedViewId(R.id.vp_btn_5)
+//                        .setLighterShape(new OvalShape())
+//                        .setTipView(mTipViewList.get(4))
+//                        .setTipViewRelativeDirection(Direction.TOP)
+//                        .setTipViewRelativeOffset(new MarginOffset(0, 100, 0, 20))
+//                        .setTipViewDisplayAnimation(LighterHelper.getScaleAnimation())
+//                        .build())
+
                 .addHighlight(new LighterParameter.Builder()
-                        .setHighlightedViewId(R.id.vp_btn_1)
+                        .setHighlightedView(new View(getContext()))
                         .setLighterShape(new OvalShape())
                         .setTipView(mTipViewList.get(0))
-                        .setRightOffset(40)
-                        .setTopOffset(140)
-                        .setBottomOffset(20)
-                        .setTipViewDisplayAnimation(LighterHelper.getScaleAnimation())
-//                        .setTipViewRelativeDirection(Direction.CENTER_BOTTOM)
                         .setGravity(Gravity.CENTER)
-                        .setTipViewRelativeOffset(new MarginOffset(0, 0, 80, 0))
-                        .build())
-                .addHighlight(new LighterParameter.Builder()
-                        .setHighlightedViewId(R.id.vp_btn_2)
-                        .setLighterShape(new OvalShape())
-                        .setTipView(mTipViewList.get(1))
-//                        .setTipViewRelativeDirection(Direction.LEFT)
-                                                .setBottomOffset(120)
-                        .setGravity(Gravity.CENTER)
-                        .setTipViewDisplayAnimation(LighterHelper.getScaleAnimation())
-                        .setTipViewRelativeOffset(new MarginOffset(50, 0, 100, 0))
-                        .build())
-                .addHighlight(new LighterParameter.Builder()
-                        .setHighlightedViewId(R.id.vp_btn_3)
-                        .setLighterShape(new OvalShape())
-                        .setTipView(mTipViewList.get(2))
-                        .setTipViewRelativeDirection(Direction.TOP)
-                        .setTipViewDisplayAnimation(LighterHelper.getScaleAnimation())
-                        .setTipViewRelativeOffset(new MarginOffset(-400, 0, 0, 30))
-                        .build())
-                .addHighlight(new LighterParameter.Builder()
-                        .setHighlightedViewId(R.id.vp_btn_4)
-                        .setLighterShape(new OvalShape())
-                        .setTipView(mTipViewList.get(3))
-                        .setTipViewRelativeDirection(Direction.TOP)
-                        .setTipViewRelativeOffset(new MarginOffset(80, 0, 0, 20))
-                        .setTipViewDisplayAnimation(LighterHelper.getScaleAnimation())
-                        .build())
-                .addHighlight(new LighterParameter.Builder()
-                        .setHighlightedViewId(R.id.vp_btn_5)
-                        .setLighterShape(new OvalShape())
-                        .setTipView(mTipViewList.get(4))
-                        .setTipViewRelativeDirection(Direction.TOP)
-                        .setTipViewRelativeOffset(new MarginOffset(0, 100, 0, 20))
-                        .setTipViewDisplayAnimation(LighterHelper.getScaleAnimation())
                         .build());
+
 
         mLighter.show();
     }
 
-    private void showNext(){
-        if (mLighter != null){
+    private void showNext() {
+        if (mLighter != null) {
             mLighter.next();
         }
     }
@@ -192,7 +200,7 @@ public class LighterFragment extends Fragment {
     private View.OnClickListener mClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            switch (v.getId()){
+            switch (v.getId()) {
                 case R.id.vp_btn_1:
                     showNext();
                     Toast.makeText(getActivity(), "You click button 1", Toast.LENGTH_SHORT).show();

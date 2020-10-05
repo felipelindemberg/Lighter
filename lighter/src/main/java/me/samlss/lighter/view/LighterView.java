@@ -162,10 +162,10 @@ public class LighterView extends FrameLayout {
             layoutParams = new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         }
 
-        if (highlightedViewRect == null
-                || highlightedViewRect.isEmpty()) {
-            return layoutParams;
-        }
+//        if (highlightedViewRect == null
+//                || highlightedViewRect.isEmpty()) {
+//            return layoutParams;
+//        }
 
         if (lighterParameter.getGravity() != Gravity.NO_GRAVITY) {
             layoutParams.gravity = lighterParameter.getGravity();
