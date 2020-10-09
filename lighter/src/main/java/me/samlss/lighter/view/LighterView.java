@@ -206,14 +206,14 @@ public class LighterView extends FrameLayout {
                 break;
 
             case Direction.CENTER_BOTTOM:
-                layoutParams.topMargin = (int) (highlightedViewRect.bottom + marginOffset.getTopOffset());
+                layoutParams.topMargin = (int) (highlightedViewRect.bottom + marginOffset.getTopOffset() + lighterParameter.getShapeBottomOffset());
                 layoutParams.gravity = Gravity.CENTER_HORIZONTAL;
                 canUpdateGravity = false;
                 break;
 
             case Direction.CENTER_TOP:
-                layoutParams.bottomMargin = (int) (height - highlightedViewRect.bottom + highlightedViewRect.height() + marginOffset.getBottomOffset());
-                layoutParams.gravity = Gravity.CENTER_HORIZONTAL;
+                layoutParams.bottomMargin = (int) (height - highlightedViewRect.top + marginOffset.getTopOffset() + lighterParameter.getShapeTopOffset());
+                layoutParams.gravity = Gravity.CENTER_HORIZONTAL | Gravity.BOTTOM;
                 canUpdateGravity = false;
                 break;
         }
