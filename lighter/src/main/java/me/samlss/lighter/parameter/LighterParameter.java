@@ -36,6 +36,7 @@ public class LighterParameter {
     private int tipViewRelativeDirection;
     private MarginOffset tipViewRelativeMarginOffset;
     private int mGravity = Gravity.NO_GRAVITY;
+    private boolean isWrap = false;
 
     private Animation tipViewDisplayAnimation;
 
@@ -215,6 +216,14 @@ public class LighterParameter {
         this.shapeBottomOffset = shapeBottomOffset;
     }
 
+    public boolean isWrap() {
+        return isWrap;
+    }
+
+    public void setWrap(boolean wrap) {
+        isWrap = wrap;
+    }
+
     public int getGravity() {
         return mGravity;
     }
@@ -344,6 +353,11 @@ public class LighterParameter {
 
         public Builder setGravity(int gravity) {
             mLighterParameter.setGravity(gravity);
+            return this;
+        }
+
+        public Builder setWrapContent(boolean isWrap) {
+            mLighterParameter.setWrap(isWrap);
             return this;
         }
 

@@ -159,7 +159,11 @@ public class LighterView extends FrameLayout {
         MarginOffset marginOffset = lighterParameter.getTipViewRelativeMarginOffset();
         LayoutParams layoutParams = (LayoutParams) tipView.getLayoutParams();
         if (layoutParams == null) {
-            layoutParams = new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            if(lighterParameter.isWrap()){
+                layoutParams = new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            }else{
+                layoutParams = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            }
         }
 
 //        if (highlightedViewRect == null
