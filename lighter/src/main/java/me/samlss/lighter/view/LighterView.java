@@ -166,13 +166,15 @@ public class LighterView extends FrameLayout {
             }
         }
 
-//        if (highlightedViewRect == null
-//                || highlightedViewRect.isEmpty()) {
-//            return layoutParams;
-//        }
+
 
         if (lighterParameter.getGravity() != Gravity.NO_GRAVITY) {
             layoutParams.gravity = lighterParameter.getGravity();
+            return layoutParams;
+        }
+
+        if (highlightedViewRect == null
+                || highlightedViewRect.isEmpty()) {
             return layoutParams;
         }
 
